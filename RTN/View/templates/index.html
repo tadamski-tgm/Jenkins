@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rock The Net</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/business-casual.css') }}">
+	
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">ROCK THE NET</div>
+    <div class="address-bar">Adamski Tarek | Bracher Daniel | Ilendemli Muhammet | Weiss Janet</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                	{% if logged_in %}
+	                    <li>
+	                        <a href="/logout">Logout</a>
+	                    </li>
+	                	<li>
+	                        <a href="/zones">Zones</a>
+	                    </li>
+	                    <li>
+	                        <a href="/services">Services</a>
+	                    </li>
+	                    <li>
+	                        <a href="/diagram">Diagram</a>
+	                    </li>
+	                    <li>
+	                        <a href="/rules">Firewall Rules</a>
+	                    </li>
+                    {% else %}
+						<li>
+	                        <a href="/">Home</a>
+	                    </li>
+	                    <li>
+	                        <a href="/login">Login</a>
+	                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>A NEW ERA OF EASY-ACCESSING YOUR FIREWALL</strong>
+                    </h2>
+                    <hr>
+                    <br>
+                    <hr class="visible-xs">
+                    <p><i><center>
+                    In computing, a <b>firewall</b> is a network security system that controls the <b>incoming and outgoing network</b> traffic based on applied rule set.<br> A 			 					<b>firewall establishes a barrier</b> between a trusted, secure internal network and another network (e.g., the Internet) that is assumed<br> not to  			 					be secure and trusted. Firewalls exist both as a <b>software solution and as a hardware</b> appliance.<br> Many hardware-based firewalls also offer  					other functionality to the internal network they protect, such as acting as a <b>DHCP server</b> for that network.
+                    </center></i></p>
+                    <br>
+                    <p><i><center>
+                    To get some details for your personal firewall device, please click at the <b>"login"-button above</b>. <br>You'll be asked for your <b>IP-address</b>, your <b>port-number</b> and your <b>community-name</b>.
+                    </center></i></p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+   <!-- jQuery Version 1.11.0 -->
+    <script src="{{ url_for('static', filename='js/jquery-1.11.0.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    </script>
+
+</body>
+
+</html>
